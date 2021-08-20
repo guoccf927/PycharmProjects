@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DataFactory</title>
+    <style>
+        .mydiv{
+            border-radius:5px;
+            box-shadow: 4px 4px 8px gray;
+            background-color: #f8f6f6;
+            width: 90%;margin-left: 5%
+        }
+        .mydiv li{
+            float: left;width: 25%;
+        }
+        .mydiv li a{
+            text-decoration: none;
+            color: transparent;
+            background: linear-gradient(to top, #333 30%, #fa2ce8);
+            -webkit-background-clip:text;
+            font-size: large;
+        }
+    </style>
+
+</head>
+<body>
+{% include "menu.html" %}
+
+<div style="width: 50%;margin-left: 25%" class="input-group">
+    <input type="text" class="form-control" style="text-align:center;border-radius: 50px 0 0 50px" placeholder="请输入搜索关键字">
+    <span class="input-group-btn">
+        <button class="btn btn-default" type="button" style="border-radius: 0 50px 50px 0">Search</button>
+    </span>
+</div>
+
+<div style="height: 500px;" class="mydiv">
+    <ul>
+        {% for href in hrefs %}
+            <li><a href="{{ href.url }}">{{ href.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div style="height: 300px;color: #de698d;margin-top: 15px;" class="mydiv">
+    <h3> 公告 <span class="glyphicon glyphicon-bullhorn"></span></h3>
+{#    <h5>#}
+{#        【更新时间】<br>#}
+{#        【更新方式】<br>#}
+{#        【更新范围】<br>#}
+{#        【更新内容】<br>#}
+{#        <h6>增加了xxx功能</h6>#}
+{#        <h6>修复并问题</h6>#}
+{##}
+{#    </h5>#}
+    {% for notice in notices %}
+        <h5 style="color: black"><strong>{{ notice.content }}</strong>
+            <span style="font-size: xx-small;color: gray">
+                ({{ notice.ctime }})
+            </span>
+        </h5>
+    {% endfor %}
+
+</div>
+</body>
+</html>

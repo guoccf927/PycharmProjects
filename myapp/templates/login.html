@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>登录页面</title>
+	<link rel="stylesheet" type="text/css" href="/static/201507141843/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/static/201507141843/css/default.css">
+	<link rel="stylesheet" type="text/css" href="/static/201507141843/css/styles.css">
+
+    <style>
+        body{
+            background:url("/static/登录页面绿色背景.jpg");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <h1>欢迎访问数据工厂</h1>
+            <h4>welcome to DataFactory</h4>
+            <form id="form_id" class="form" action="/login_act/" method="post">
+                <input type="text" placeholder="请输入用户名" name="Uname">
+                <input type="password" placeholder="请输入密码" name="Pwd">
+                <button type="submit" id="login-button">登录</button>
+                <br>
+                <br>
+                <span style="font-size: small">若没有账号，可以点此进行</span>
+                <a href="javascript: register()"><strong>注册</strong></a>
+            </form>
+        </div>
+
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        function register(){
+            document.getElementById("form_id").action = '/register_act/'
+            document.getElementById("form_id").submit()
+
+        }
+    </script>
+	<script src="/static/201507141843/js/jquery-2.1.1.min.js"></script>
+
+</body>
+</html>
