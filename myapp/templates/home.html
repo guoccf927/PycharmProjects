@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>DataFactory</title>
+    <link rel="shortcut icon" href="/static/tubiao.ico">
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
     <style>
         .mydiv{
             border-radius:5px;
@@ -20,27 +23,90 @@
             -webkit-background-clip:text;
             font-size: large;
         }
+        .mydiv ul{
+            list-style: none;
+        }
     </style>
-
 </head>
+
 <body>
 {% include "menu.html" %}
 
+{#搜索框#}
 <div style="width: 50%;margin-left: 25%" class="input-group">
-    <input type="text" class="form-control" style="text-align:center;border-radius: 50px 0 0 50px" placeholder="请输入搜索关键字">
-    <span class="input-group-btn">
+    <input oninput="Search_act(event)" type="text" class="form-control" style="text-align:center;border-radius: 50px 50px 50px 50px" placeholder="请输入搜索关键字">
+    <span class="input-group-btn" style="display: none">
         <button class="btn btn-default" type="button" style="border-radius: 0 50px 50px 0">Search</button>
     </span>
 </div>
 
+{#超链接列表#}
 <div style="height: 500px;" class="mydiv">
-    <ul>
-        {% for href in hrefs %}
-            <li><a href="{{ href.url }}">{{ href.name }}</a></li>
-        {% endfor %}
+    <h3>欢迎使用xx平台首页传送门：<span style="font-size: small;color: gray;cursor:text;">为防止丢失，请保存本页面为标签，若想新增可 <a href="#" onclick="javascript:document.getElementById('new_link_div').style.display='block' ">点击这里</a></span></h3>
+    <ul id="myul">
+{#        {% for href in hrefs %}#}
+{#            <li><span class="glyphicon glyphicon-link" style="color: #e84393"></span><a href="{{ href.url }}">{{ href.name }}</a></li>#}
+{#        {% endfor %}#}
+        <li v-for="href in v_hrefs">
+            <span class="glyphicon glyphicon-link" style="color: #e84393"></span><a :href="[[ href.url ]]" title="cc创建的">[[ href.name ]]</a>
+        </li>
+
+        <div id="new_link_div" style="display: none;position: fixed;top: 40%; left: 25%;width: 50%;box-shadow: 4px 4px 6px #772e70;border: #7a3456 solid 1px;" class="input-group">
+            <input id="new_link_url" type="text" class="form-control" style="width: 80%" placeholder="请输入新超链接的url">
+            <input id="new_link_name" type="text" class="form-control" style="width: 80%" placeholder="请输入新超链接的描述">
+            <span class="input-group-btn" style="width: 15%">
+                <button v-on:click="add_link" class="btn btn-default" type="button" style="height: 68px; width: 100%">添加</button>
+            </span>
+        </div>
     </ul>
 </div>
 
+{#新增标签函数#}
+<script>
+    let v = new Vue({
+        el:'#myul',
+        delimiters:["[[", "]]"],
+        data:{
+            v_hrefs: {{ hrefs|safe }}
+        },
+        methods: {
+            add_link: function () {
+                {# 获取用户输入内容#}
+                let new_link_url = document.getElementById('new_link_url').value;
+                let new_link_name = document.getElementById('new_link_name').value;
+                {# 发送请求给后端#}
+                axios
+                    .get('/add_href/', {
+                        params:{
+                            'new_link_url': new_link_url,
+                            'new_link_name': new_link_name
+                        }
+                    })
+                    .then(function () {
+                        document.location.reload()
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
+        }
+    })
+    function Search_act(event) {
+        {#console.log(event.target.value);#}
+        let old_hrefs = {{ hrefs|safe }};
+        let new_hrefs = [];
+        {#若搜索内容在列表.name中，则放入新的列表，最终显示新列表的全部内容#}
+        for(let i=0;i<old_hrefs.length;i++){
+            if(old_hrefs[i].name.toLowerCase().indexOf(event.target.value.toLowerCase()) != -1){
+                new_hrefs.push(old_hrefs[i])
+            }
+        }
+        console.log(new_hrefs)
+        v.v_hrefs = new_hrefs
+    }
+</script>
+
+{#公告#}
 <div style="height: 300px;color: #de698d;margin-top: 15px;" class="mydiv">
     <h3> 公告 <span class="glyphicon glyphicon-bullhorn"></span></h3>
 {#    <h5>#}

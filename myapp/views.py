@@ -12,8 +12,8 @@ from myapp.models import *
 def into_home(request):
     res = {}
     res['username'] = request.user.username
-    res['hrefs'] = DB_href.objects.all()
-    res['notices'] = DB_notice.objects.all()
+    res['hrefs'] = list(DB_href.objects.all().values())
+    res['notices'] = DB_notice.objects.all()[::-1]
     return render(request, 'home.html', res)
 
 
@@ -61,3 +61,10 @@ def register_act(request):
                 return HttpResponse(f'注册失败，{Uname} 用户名已经存在')
         else:
             return HttpResponse('注册失败，请重试')
+
+
+def add_href(request):
+    new_link_url = request.GET['new_link_url']
+    new_link_name = request.GET['new_link_name']
+    DB_href.objects.create(name=new_link_name, url=new_link_url)
+    return HttpResponse('')

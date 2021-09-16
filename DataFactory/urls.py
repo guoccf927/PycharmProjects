@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myapp.views import *
+from myapp.GM_views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,9 @@ urlpatterns = [
     path('login_act/', login_act),  # 登录
     path('logout/', logout),  # 注销
     path('register_act/', register_act),  # 注册
+    path('add_href/', add_href),  # 首页添加超链接
+
+    # 官方工具构造-url
+    path('GM_tools/house/', house),  # 进入房源构造
+    path('GM_tools/house_check_user', house_check_user),  # 验证用户名密码
 ]

@@ -220,7 +220,7 @@
 	</style>
 </head>
 <body>
-
+{#菜单#}
     <nav class="navbar navbar-default navbar-mobile bootsnav">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
@@ -234,25 +234,25 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Tools">官方工具 <span data-hover="Tools"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">创建数据集</a></li>
-                        <li><a href="#">添加任务</a></li>
+                        <li><a href="/GM_tools/house/">构造房源</a></li>
+                        <li><a href="/GM_tools/order/">构造订单</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="ModifyTools">自定义工具 <span data-hover="ModifyTools"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">创建虚机</a></li>
-                        <li><a href="#">创建pipeline</a></li>
+                        <li><a href="#">构造房客</a></li>
+                        <li><a href="#">构造房东</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Basic">基础设施 <span data-hover="Basic"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">数据库组件</a></li>
-                        <li><a href="#">服务器组件</a></li>
-                        <li><a href="#">变量设置</a></li>
+                        <li><a href="/admin/myapp/db_sql/" target="_blank">数据库组件</a></li>
+                        <li><a href="/admin/myapp/db_linux/" target="_blank">服务器组件</a></li>
+                        <li><a href="/admin/myapp/db_par/" target="_blank">变量设置</a></li>
                         <li><a href="#">环境设置</a></li>
                     </ul>
                 </li>
@@ -262,7 +262,8 @@
                     <ul class="dropdown-menu">
                         <li><a href="#">数据统计</a></li>
                         <li><a href="#">用户管理</a></li>
-                        <li><a href="#">超链接管理</a></li>
+                        <li><a href="/admin/myapp/db_href/" target="_blank">超链接管理</a></li>
+                        <li><a href="/admin/myapp/db_notice/" target="_blank">公告管理</a></li>
                         <li><a href="/admin" target="_blank">进入后台</a></li>
                     </ul>
                 </li>

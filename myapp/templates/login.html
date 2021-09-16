@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="/static/201507141843/css/default.css">
 	<link rel="stylesheet" type="text/css" href="/static/201507141843/css/styles.css">
 
+    {#背景图片#}
     <style>
         body{
             background:url("/static/登录页面绿色背景.jpg");
@@ -16,8 +17,9 @@
         }
     </style>
 </head>
-<body>
 
+<body>
+    {#登录模块#}
     <div class="wrapper">
         <div class="container">
             <h1>欢迎访问数据工厂</h1>
@@ -47,6 +49,7 @@
         </ul>
     </div>
 
+    {#注册函数#}
     <script>
         function register(){
             document.getElementById("form_id").action = '/register_act/'
@@ -54,7 +57,9 @@
 
         }
     </script>
-	<script src="/static/201507141843/js/jquery-2.1.1.min.js"></script>
+
+    {#引入jQuery#}
+    <script src="/static/201507141843/js/jquery-2.1.1.min.js"></script>
 
 </body>
 </html>
