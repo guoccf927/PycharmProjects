@@ -32,6 +32,7 @@ class DB_GM_tools(models.Model):
 # 官方工具步骤
 class DB_GM_steps(models.Model):
     tool_id = models.CharField('所属工具id', max_length=10)
+    filter_id = models.CharField('过滤id', max_length=100, null=True, blank=True, default='')
     method = models.CharField('类型：r-请求， s-sql, l-linux', max_length=10, null=True, blank=True, default='r')
     name = models.CharField('名字', max_length=10, null=True, blank=True, default='')
     delay_before = models.IntegerField('执行前延迟x秒', default=0)
@@ -41,15 +42,16 @@ class DB_GM_steps(models.Model):
     retry = models.IntegerField('重试次数', default=0)
     timeout = models.IntegerField('最大等待时间', default=60)
     order = models.IntegerField('执行顺序')
+    final_res_re = models.CharField('最终返回结果，正则', max_length=200, default='')
     # sql
     sql_fixture = models.CharField('sql组件id', max_length=10, null=True, blank=True, default='')
     sql_body = models.CharField('sql语句体', max_length=2000, null=True, blank=True, default='')
-    sql_assert_str = models.CharField('sql断言返回值表达式-字符串', max_length=300, null=True, blank=True, default='')
+    sql_assert_str = models.CharField('sql断言返回值-字符串', max_length=300, null=True, blank=True, default='')
     sql_extract_index = models.CharField('sql提取-下标法', max_length=300, null=True, blank=True, default='')
     # linux
     linux_fixture = models.CharField('linux组件id', max_length=10, null=True, blank=True, default='')
     linux_body = models.CharField('linux语句体', max_length=2000, null=True, blank=True, default='')
-    linux_assert_str = models.CharField('linux断言返回值表达式-字符串', max_length=300, null=True, blank=True, default='')
+    linux_assert_str = models.CharField('linux断言返回值-字符串', max_length=300, null=True, blank=True, default='')
     linux_extract_re = models.CharField('Linux提取-正则匹配', max_length=300, null=True, blank=True, default='')
     # requests请求
     request_method = models.CharField('请求方式', max_length=10, null=True, blank=True, default='get')
@@ -60,8 +62,7 @@ class DB_GM_steps(models.Model):
     request_sign = models.BooleanField('是否加密验签', default=False)
     request_cert = models.BooleanField('是否带证书', default=False)
     request_proxy = models.BooleanField('是否代理', default=False)
-    request_assert_str = models.CharField('request断言返回值表达式-字符串', max_length=300, null=True, blank=True, default='')
-    request_assert_path = models.CharField('request断言返回值表达式-路径法', max_length=300, null=True, blank=True, default='')
+    request_assert_str = models.CharField('request断言返回值-字符串', max_length=300, null=True, blank=True, default='')
     request_extract_re = models.CharField('request提取-正则匹配', max_length=300, null=True, blank=True, default='')
     request_group = models.IntegerField('分组-登录态持久化', default=0)
 

@@ -27,7 +27,8 @@ urlpatterns = [
     path('register_act/', register_act),  # 注册
     path('add_href/', add_href),  # 首页添加超链接
 
-    # 官方工具构造-url
+    # 官方工具构造-房源构造-url
     path('GM_tools/house/', house),  # 进入房源构造
-    path('GM_tools/house_check_user', house_check_user),  # 验证用户名密码
+    path('GM_tools/house_check_user/', house_check_user),  # 验证用户名密码
+    path('GM_tools/house_run/', house_run),  # 验证用户名密码
 ]

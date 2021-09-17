@@ -18,152 +18,221 @@
 <body>
 {% include "menu.html" %}
 
-    {#请输入用户名和密码#}
-    <section class="htmleaf-content bgcolor-1" style="text-align: center">
-        <h2>请输入用户名和密码</h2>
-        <span class="input input--nao">
-            <input class="input__field input__field--nao normal_data" type="text" id="input-username" />
-            <label class="input__label input__label--nao" for="input-1">
-                <span class="input__label-content input__label-content--nao">用户名</span>
-            </label>
-            <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-            </svg>
-        </span>
-        <span class="input input--nao">
-            <input class="input__field input__field--nao normal_data" type="text" id="input-userpwd" />
-            <label class="input__label input__label--nao" for="input-2">
-                <span class="input__label-content input__label-content--nao">密码</span>
-            </label>
-            <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-            </svg>
-        </span>
-    </section>
+{#请输入用户名和密码#}
+<section class="htmleaf-content bgcolor-1" style="text-align: center">
+    <h2>请输入用户名和密码</h2>
+    <span class="input input--nao">
+        <input class="input__field input__field--nao normal_data" type="text" id="input-username" />
+        <label class="input__label input__label--nao" for="input-1">
+            <span class="input__label-content input__label-content--nao">用户名</span>
+        </label>
+        <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+        </svg>
+    </span>
+    <span class="input input--nao">
+        <input class="input__field input__field--nao normal_data" type="text" id="input-userpwd" />
+        <label class="input__label input__label--nao" for="input-2">
+            <span class="input__label-content input__label-content--nao">密码</span>
+        </label>
+        <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+        </svg>
+    </span>
+</section>
 
-    {#默认选填数据#}
-    <section class="htmleaf-content bgcolor-10" style="text-align: center;">
-        <h2>默认选填数据</h2>
-        <span class="input input--shoko">
-            <input class="input__field input__field--shoko normal_data" type="text" id="input-4" value="测试平台的房源(请勿下单)" />
-            <label class="input__label input__label--shoko" for="input-4">
-                <span class="input__label-content input__label-content--shoko">房源标题</span>
-            </label>
-            <svg class="graphic graphic--shoko" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"/>
-            </svg>
-        </span>
-        <br>
-        <span class="input input--shoko">
-            <input class="input__field input__field--shoko normal_data" type="text" id="input-5" value="1.00"/>
-            <label class="input__label input__label--shoko" for="input-5">
-                <span class="input__label-content input__label-content--shoko">出租单价（单位：元）</span>
-            </label>
-            <svg class="graphic graphic--shoko" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"/>
-            </svg>
-        </span>
-    </section>
+{#默认选填数据#}
+<section class="htmleaf-content bgcolor-10" style="text-align: center;">
+    <h2>默认选填数据</h2>
+    <span class="input input--shoko">
+        <input class="input__field input__field--shoko normal_data" type="text" id="house_name" value="测试平台的房源(请勿下单)" />
+        <label class="input__label input__label--shoko" for="input-4">
+            <span class="input__label-content input__label-content--shoko">房源标题</span>
+        </label>
+        <svg class="graphic graphic--shoko" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+            <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"/>
+        </svg>
+    </span>
+    <br>
+    <span class="input input--shoko">
+        <input class="input__field input__field--shoko normal_data" type="text" id="house_price" value="1.00"/>
+        <label class="input__label input__label--shoko" for="input-5">
+            <span class="input__label-content input__label-content--shoko">出租单价（单位：元）</span>
+        </label>
+        <svg class="graphic graphic--shoko" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+            <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"/>
+        </svg>
+    </span>
+</section>
 
-    {#入住人数#}
-    <div style="text-align: center">
-        <span style="color: #e74392">入住人数：</span>
-        <label><input type="radio" name="x" class="checked-focus"/> 1人</label> &#12288;
-        <label><input type="radio" name="x" class="checked-focus"/> 2人</label> &#12288;
-        <label><input type="radio" name="x" class="checked-focus"/> 3人</label>
+{#入住人数#}
+<div style="text-align: center">
+    <span style="color: #e74392">入住人数：</span>
+    <label><input type="radio" name="people_counts" value="1" class="checked-focus" checked/> 1人</label> &#12288;
+    <label><input type="radio" name="people_counts" value="2" class="checked-focus"/> 2人</label> &#12288;
+    <label><input type="radio" name="people_counts" value="3" class="checked-focus"/> 3人</label>
+</div>
+
+{#配套设施#}
+<div style="text-align: center; margin-left: 24px;">
+    <span style="color: #e74392">配套设施：</span>
+    <label><input type="checkbox" name="furniture" value="tv" class="checked-focus" checked/> 电视</label> &#12288;
+    <label><input type="checkbox" name="furniture" value="refrigerator" class="checked-focus"/> 冰箱</label> &#12288;
+    <label><input type="checkbox" name="furniture" value="air-conditioner" class="checked-focus"/> 空调</label> &#12288;
+</div>
+<br>
+
+{#地区#}
+<div style="text-align: center">
+    <span style="color: #e74392">地区：</span>
+    <select id="city" style="width: 300px; height: 40px">
+        {% for i in address %}
+            <option value="{{ i.name }}">{{ i.name }}</option>
+        {% endfor %}
+    </select>
+</div>
+<br>
+
+{#国家 支持搜索的下拉框#}
+<div style="text-align: center">
+    <span style="color: #e74392">国家：</span>
+    <datalist id="country_list">
+        <option value="China">中国</option>
+        <option value="English">英国</option>
+        <option value="USA">美国</option>
+    </datalist>
+    <input id="country" value="China" list="country_list" autocomplete="off" type="text" style="width: 300px;height: 40px">
+</div>
+
+{#构造按钮#}
+<div style="position: fixed; right: 0; bottom: 40%; box-shadow: -4px 4px 6px gray">
     </div>
 
-    {#配套设施#}
-    <div style="text-align: center; margin-left: 24px;">
-        <span style="color: #e74392">配套设施：</span>
-        <label><input type="checkbox" name="x" class="checked-focus"/> 电视</label> &#12288;
-        <label><input type="checkbox" name="x" class="checked-focus"/> 冰箱</label> &#12288;
-        <label><input type="checkbox" name="x" class="checked-focus"/> 空调</label> &#12288;
-    </div>
+{#步骤列表#}
+<div style="z-index: 900;width: 200px;height: 100%;background: linear-gradient(to bottom, #dec8de, white);position: fixed;left: 0;top: 50px;padding: 10px;
+            box-shadow: 4px 4px 6px gray;overflow-y: auto">
+    <button id="run_btn" onclick="run()" class="btn" style="font-size: large;width: 100%; color: #702e6a; background-color: #fdfbfd">开始构造</button>
+    <br><br>
+    <textarea name="" id="res_txt" style="width: 100%; background-color: #fdfbfd" rows="5" placeholder="构造结果如下："></textarea>
+    <br><br>
+    <h4 style="color: #702e6a">房源步骤列表：</h4>
+    {% for i in steps %}
+        {{ i.order }}：<a href="/admin/myapp/db_gm_steps/{{ i.id}}/change/">{{ i.name }}</a><br>
+    {% endfor %}
+</div>
 
-    {#地区#}
-    <div style="text-align: center">
-        <span style="color: #e74392">地区：</span>
-        <select style="width: 300px; height: 40px">
-            {% for i in address %}
-                <option value="{{ i.name }}">{{ i.name }}</option>
-            {% endfor %}
-        </select>
-    </div>
 
-    {#构造按钮#}
-    <div id="" style="position: fixed; right: 0; bottom: 40%; box-shadow: -4px 4px 6px gray">
-        <button id="run()" class="btn" style="width: 300px; color: white; background: linear-gradient(to right, #fa2ce8, #333)">开始构造</button>
-        <br>
-        <textarea name="" id="" style="width: 300px; background-color: #f6dcf6" rows="3" placeholder="构造结果如下："></textarea>
+{#构造函数#}
+<script>
+    function run() {
+        document.getElementById('run_btn').innerText = '正在构造...'
+        // 收集页面所有数据
+        let input_username = document.getElementById('input-username').value;
+        let input_userpwd = $('#input-userpwd').val();
+        let house_name = $('#house_name').val();
+        let house_price = $('#house_price').val();
 
-    </div>
-
-    {#构造函数#}
-    <script>
-        function run() {
-            // 收集页面所有数据
-            // 向后台发送构造请求
-            // 把最终结果显示出来
+        {#获取单选项选中的value#}
+        let radio_people_counts = document.getElementsByName('people_counts');
+        let people_counts = ''
+        for(let i=0;i<radio_people_counts.length;i++){
+            if(radio_people_counts[i].checked == true){
+                people_counts = radio_people_counts[i].value;
+            }
         }
-    </script>
 
-    {#监听函数：鼠标离开触发#}
-    <script>
-        $(document).ready(function () {
-            $('#input-userpwd').blur(function () {
-                $.get('/GM_tools/house_check_user', {
-                    "username": $('#input-username').val(),
-                    "userpwd": $('#input-userpwd').val(),
-                },function (ret) {
-                    if(ret.errCode == '0'){
-                        alert('验证成功！')
-                    }else{
-                        alert('密码错误！')
-                    }
-                })
+        {#获取多选项选中的value#}
+        let furniture = []
+        $('input[name="furniture"]:checked').each(
+            function () {
+                furniture.push($(this).val())
+            }
+        )
+
+        {#获取下拉框选中的值#}
+        let city = document.getElementById('city').value;
+
+        {#获取支持迷糊搜素下拉框的选中值#}
+        let country = $('#country').val();
+
+        // 向后台发送构造请求
+        $.get('/GM_tools/house_run/', {
+            "input_username": input_username,
+            "input_userpwd": input_userpwd,
+            "house_name": house_name,
+            "house_price": house_price,
+            "people_counts": people_counts,
+            "furniture": furniture.toString(),
+            "city": city,
+            "country": country,
+        },function (ret) {
+            //把最终结果显示出来
+            let rl = '';
+            for(let i in ret){
+                rl += i + '：' + ret[i] + '\n'
+            }
+            document.getElementById('res_txt').value = rl
+            document.getElementById('run_btn').innerText = '构造完成'
+        })
+    }
+</script>
+
+{#监听函数：鼠标离开触发#}
+<script>
+    $(document).ready(function () {
+        $('#input-userpwd').blur(function () {
+            $.get('/GM_tools/house_check_user', {
+                "username": $('#input-username').val(),
+                "userpwd": $('#input-userpwd').val(),
+            },function (ret) {
+                if(ret.errCode == '0'){
+                    alert('验证成功！')
+                }else{
+                    alert('密码错误！')
+                }
             })
         })
-    </script>
+    })
+</script>
 
-    {#组件原生引用#}
-	<script src="/static/201503191554/js/classie.js"></script>
-    <script>
-		(function() {
-			// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
-			if (!String.prototype.trim) {
-				(function() {
-					// Make sure we trim BOM and NBSP
-					var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-					String.prototype.trim = function() {
-						return this.replace(rtrim, '');
-					};
-				})();
-			}
+{#组件原生引用#}
+<script src="/static/201503191554/js/classie.js"></script>
+<script>
+    (function() {
+        // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+        if (!String.prototype.trim) {
+            (function() {
+                // Make sure we trim BOM and NBSP
+                var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                String.prototype.trim = function() {
+                    return this.replace(rtrim, '');
+                };
+            })();
+        }
 
-			[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
-				// in case the input is already filled..
-				if( inputEl.value.trim() !== '' ) {
-					classie.add( inputEl.parentNode, 'input--filled' );
-				}
+        [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+            // in case the input is already filled..
+            if( inputEl.value.trim() !== '' ) {
+                classie.add( inputEl.parentNode, 'input--filled' );
+            }
 
-				// events:
-				inputEl.addEventListener( 'focus', onInputFocus );
-				inputEl.addEventListener( 'blur', onInputBlur );
-			} );
+            // events:
+            inputEl.addEventListener( 'focus', onInputFocus );
+            inputEl.addEventListener( 'blur', onInputBlur );
+        } );
 
-			function onInputFocus( ev ) {
-				classie.add( ev.target.parentNode, 'input--filled' );
-			}
+        function onInputFocus( ev ) {
+            classie.add( ev.target.parentNode, 'input--filled' );
+        }
 
-			function onInputBlur( ev ) {
-				if( ev.target.value.trim() === '' ) {
-					classie.remove( ev.target.parentNode, 'input--filled' );
-				}
-			}
-		})();
-	</script>
+        function onInputBlur( ev ) {
+            if( ev.target.value.trim() === '' ) {
+                classie.remove( ev.target.parentNode, 'input--filled' );
+            }
+        }
+    })();
+</script>
 </body>
 </html>
